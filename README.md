@@ -1,13 +1,15 @@
 GitHubApp will:
-1. Get the public members from an organization utilizing the GitHub API.
+1. Get the public and private members from an organization utilizing the GitHub API.
 2. Get the names and emails of each member.
 3. Determine which members do not have names on their GitHub profiles.
-4. Members without names that have emails listed will receive an email with instructions for adding a name to their profile.
+4. Members without names that have emails listed can be sent an email with instructions for adding a name to their profile.
 5. The list of members without names can be posted to an AWS S3 bucket in a text file.
 
 Assumptions:
-1. All members downloaded from the GitHub API are public members. The requestor of information must be an organization member to have access to the private members.
-2. Members without names that are also missing an email address are omitted from the list. Members without emails cannot be contacted.
+1. The requestor of information must be an organization member to have access to the private members.
+2. If the requestor is not a member of the organization, only the public members will be visible to the application.
+3. If the requestor is a member of the organization, both public and private members will be visible to the application.
+4. Members without names that are also missing an email address are omitted from the list of nameless users. Members without emails cannot be contacted.
 
 Running the app:
 1. This app will only run on a PC with Windows 7 or 10.

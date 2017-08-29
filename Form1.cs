@@ -65,7 +65,6 @@ namespace GitHubApp
                 {
                     orgMemberLoginList.Add(member.Login); // Stores the logins of the members
                 }
-
                 int i = 1;
 
                 foreach (string member in orgMemberLoginList) // Takes each member and gets their info from the API
@@ -78,10 +77,24 @@ namespace GitHubApp
                     {
                         Name = orgMemberInfo.Result.Name,
                         Login = orgMemberInfo.Result.Login,
-                        Email = orgMemberInfo.Result.Email
+                        Email = orgMemberInfo.Result.Email,
+                        Membership = client.Organization.Member.CheckMemberPublic(organization, member).Result.ToString() // Determines if member is public or private
                     });
                     i++;
                 }
+
+                foreach (OrgMember member in orgMemberInfoList) // Converts the membership booleans to strings
+                {
+                    if (Convert.ToBoolean(member.Membership))
+                    {
+                        member.Membership = "Public";
+                    }
+                    else
+                    {
+                        member.Membership = "Private";
+                    }
+                }
+
                 btnSendEmail.Enabled = true;
                 btnUploadAWS.Enabled = true;
                 lblMessage.Text = "Download Complete.";
@@ -124,7 +137,6 @@ namespace GitHubApp
             {
                 GetMembers();
             }
-
             else MessageBox.Show("Enter an organization in the search field");
         }
 
@@ -139,7 +151,6 @@ namespace GitHubApp
             {
                 MessageBox.Show("Enter Email credentials for Email functionality.");
             }
-
             else
             {
                 lblMessageB.Text = "Sending Emails to Members...";
@@ -165,7 +176,6 @@ namespace GitHubApp
             {
                 MessageBox.Show("Please enter AWS access key and secret key");
             }
-
             else
             {
                 string fileName = organization + "_MembersNoNames.txt";

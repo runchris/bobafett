@@ -34,9 +34,17 @@
             this.lblSearch = new System.Windows.Forms.Label();
             this.btnSearch = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Membership = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orgMemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblMessage = new System.Windows.Forms.Label();
             this.lblAllOrgMembers = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.loginDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orgMemberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.btnSendEmail = new System.Windows.Forms.Button();
             this.btnUploadAWS = new System.Windows.Forms.Button();
@@ -57,17 +65,10 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.txtboxEmailPassword = new System.Windows.Forms.TextBox();
-            this.loginDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgMemberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.loginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orgMemberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -118,7 +119,8 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.loginDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
-            this.emailDataGridViewTextBoxColumn});
+            this.emailDataGridViewTextBoxColumn,
+            this.Membership});
             this.dataGridView1.DataSource = this.orgMemberBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(29, 348);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -127,6 +129,42 @@
             this.dataGridView1.RowTemplate.Height = 20;
             this.dataGridView1.Size = new System.Drawing.Size(632, 487);
             this.dataGridView1.TabIndex = 4;
+            // 
+            // loginDataGridViewTextBoxColumn
+            // 
+            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
+            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.loginDataGridViewTextBoxColumn.Width = 70;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 120;
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // Membership
+            // 
+            this.Membership.DataPropertyName = "Membership";
+            this.Membership.HeaderText = "Membership";
+            this.Membership.Name = "Membership";
+            this.Membership.ReadOnly = true;
+            this.Membership.Width = 90;
+            // 
+            // orgMemberBindingSource
+            // 
+            this.orgMemberBindingSource.DataSource = typeof(GitHubApp.OrgMember);
             // 
             // lblMessage
             // 
@@ -145,9 +183,9 @@
             this.lblAllOrgMembers.Location = new System.Drawing.Point(29, 326);
             this.lblAllOrgMembers.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblAllOrgMembers.Name = "lblAllOrgMembers";
-            this.lblAllOrgMembers.Size = new System.Drawing.Size(291, 17);
+            this.lblAllOrgMembers.Size = new System.Drawing.Size(196, 17);
             this.lblAllOrgMembers.TabIndex = 6;
-            this.lblAllOrgMembers.Text = "All public members of the organization:";
+            this.lblAllOrgMembers.Text = "All organization members:";
             // 
             // dataGridView2
             // 
@@ -160,11 +198,30 @@
             this.emailDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.orgMemberBindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(684, 348);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.Size = new System.Drawing.Size(433, 487);
             this.dataGridView2.TabIndex = 7;
+            // 
+            // loginDataGridViewTextBoxColumn1
+            // 
+            this.loginDataGridViewTextBoxColumn1.DataPropertyName = "Login";
+            this.loginDataGridViewTextBoxColumn1.HeaderText = "Login";
+            this.loginDataGridViewTextBoxColumn1.Name = "loginDataGridViewTextBoxColumn1";
+            this.loginDataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // emailDataGridViewTextBoxColumn1
+            // 
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn1.Width = 180;
+            // 
+            // orgMemberBindingSource1
+            // 
+            this.orgMemberBindingSource1.DataSource = typeof(GitHubApp.OrgMember);
             // 
             // label1
             // 
@@ -180,7 +237,7 @@
             // btnSendEmail
             // 
             this.btnSendEmail.Location = new System.Drawing.Point(688, 224);
-            this.btnSendEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSendEmail.Margin = new System.Windows.Forms.Padding(4);
             this.btnSendEmail.Name = "btnSendEmail";
             this.btnSendEmail.Size = new System.Drawing.Size(171, 49);
             this.btnSendEmail.TabIndex = 9;
@@ -191,7 +248,7 @@
             // btnUploadAWS
             // 
             this.btnUploadAWS.Location = new System.Drawing.Point(867, 224);
-            this.btnUploadAWS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnUploadAWS.Margin = new System.Windows.Forms.Padding(4);
             this.btnUploadAWS.Name = "btnUploadAWS";
             this.btnUploadAWS.Size = new System.Drawing.Size(171, 49);
             this.btnUploadAWS.TabIndex = 10;
@@ -213,7 +270,7 @@
             // txtboxGitHubToken
             // 
             this.txtboxGitHubToken.Location = new System.Drawing.Point(159, 101);
-            this.txtboxGitHubToken.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxGitHubToken.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxGitHubToken.Name = "txtboxGitHubToken";
             this.txtboxGitHubToken.Size = new System.Drawing.Size(352, 22);
             this.txtboxGitHubToken.TabIndex = 12;
@@ -221,7 +278,7 @@
             // txtboxAWS_AccessKey
             // 
             this.txtboxAWS_AccessKey.Location = new System.Drawing.Point(159, 133);
-            this.txtboxAWS_AccessKey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxAWS_AccessKey.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxAWS_AccessKey.Name = "txtboxAWS_AccessKey";
             this.txtboxAWS_AccessKey.Size = new System.Drawing.Size(352, 22);
             this.txtboxAWS_AccessKey.TabIndex = 13;
@@ -229,7 +286,7 @@
             // txtboxAWS_SecretKey
             // 
             this.txtboxAWS_SecretKey.Location = new System.Drawing.Point(159, 165);
-            this.txtboxAWS_SecretKey.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxAWS_SecretKey.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxAWS_SecretKey.Name = "txtboxAWS_SecretKey";
             this.txtboxAWS_SecretKey.Size = new System.Drawing.Size(352, 22);
             this.txtboxAWS_SecretKey.TabIndex = 14;
@@ -270,7 +327,7 @@
             // txtboxSenderAddress
             // 
             this.txtboxSenderAddress.Location = new System.Drawing.Point(803, 101);
-            this.txtboxSenderAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxSenderAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxSenderAddress.Name = "txtboxSenderAddress";
             this.txtboxSenderAddress.Size = new System.Drawing.Size(169, 22);
             this.txtboxSenderAddress.TabIndex = 18;
@@ -278,7 +335,7 @@
             // txtboxSMTP_Host
             // 
             this.txtboxSMTP_Host.Location = new System.Drawing.Point(803, 133);
-            this.txtboxSMTP_Host.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxSMTP_Host.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxSMTP_Host.Name = "txtboxSMTP_Host";
             this.txtboxSMTP_Host.Size = new System.Drawing.Size(169, 22);
             this.txtboxSMTP_Host.TabIndex = 19;
@@ -286,7 +343,7 @@
             // txtboxPort
             // 
             this.txtboxPort.Location = new System.Drawing.Point(1028, 133);
-            this.txtboxPort.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxPort.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxPort.Name = "txtboxPort";
             this.txtboxPort.Size = new System.Drawing.Size(55, 22);
             this.txtboxPort.TabIndex = 20;
@@ -365,56 +422,10 @@
             // txtboxEmailPassword
             // 
             this.txtboxEmailPassword.Location = new System.Drawing.Point(803, 165);
-            this.txtboxEmailPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtboxEmailPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtboxEmailPassword.Name = "txtboxEmailPassword";
             this.txtboxEmailPassword.Size = new System.Drawing.Size(169, 22);
             this.txtboxEmailPassword.TabIndex = 27;
-            // 
-            // loginDataGridViewTextBoxColumn1
-            // 
-            this.loginDataGridViewTextBoxColumn1.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn1.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn1.Name = "loginDataGridViewTextBoxColumn1";
-            this.loginDataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // emailDataGridViewTextBoxColumn1
-            // 
-            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
-            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn1.Width = 180;
-            // 
-            // orgMemberBindingSource1
-            // 
-            this.orgMemberBindingSource1.DataSource = typeof(GitHubApp.OrgMember);
-            // 
-            // loginDataGridViewTextBoxColumn
-            // 
-            this.loginDataGridViewTextBoxColumn.DataPropertyName = "Login";
-            this.loginDataGridViewTextBoxColumn.HeaderText = "Login";
-            this.loginDataGridViewTextBoxColumn.Name = "loginDataGridViewTextBoxColumn";
-            this.loginDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // emailDataGridViewTextBoxColumn
-            // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
-            this.emailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.emailDataGridViewTextBoxColumn.Width = 180;
-            // 
-            // orgMemberBindingSource
-            // 
-            this.orgMemberBindingSource.DataSource = typeof(GitHubApp.OrgMember);
             // 
             // Form1
             // 
@@ -455,9 +466,9 @@
             this.Text = "GitHubApp";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orgMemberBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -472,9 +483,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.BindingSource orgMemberBindingSource;
         private System.Windows.Forms.Label lblMessage;
-        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label lblAllOrgMembers;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.BindingSource orgMemberBindingSource1;
@@ -500,6 +508,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtboxEmailPassword;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loginDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Membership;
     }
 }
 

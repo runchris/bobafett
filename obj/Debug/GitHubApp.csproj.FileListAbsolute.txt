@@ -26,9 +26,6 @@ C:\Users\chris\Documents\GitHubApp\bin\Debug\AWSSDK.Core.pdb
 C:\Users\chris\Documents\GitHubApp\bin\Debug\AWSSDK.Core.xml
 C:\Users\chris\Documents\GitHubApp\bin\Debug\AWSSDK.S3.pdb
 C:\Users\chris\Documents\GitHubApp\bin\Debug\AWSSDK.S3.xml
-C:\Users\chris\Documents\GitHubApp\bin\Debug\Octokit.pdb
-C:\Users\chris\Documents\GitHubApp\bin\Debug\Octokit.xml
-C:\Users\chris\Documents\GitHubApp\obj\Debug\GitHubApp.csprojResolveAssemblyReference.cache
 C:\Users\chris\Documents\GitHubApp\obj\Debug\GitHubApp.Form1.resources
 C:\Users\chris\Documents\GitHubApp\obj\Debug\GitHubApp.Properties.Resources.resources
 C:\Users\chris\Documents\GitHubApp\obj\Debug\GitHubApp.csproj.GenerateResource.Cache
